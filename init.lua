@@ -98,21 +98,16 @@ mininvim.deps.setup({
   {
     source = 'TheLeoP/powershell.nvim',
     later = true,
+    disable = true,
     name = 'powershell',
     opts = {
       bundle_path = vim.fn.stdpath('data') .. '/mason/packages/powershell-editor-services',
     },
   },
   {
-    source = 'justinhj/battery.nvim',
-    depends = {
-      'nvim-lua/plenary.nvim',
-    },
-    name = 'battery',
-    opts = {
-      vertical_icons = false,
-      update_rate_seconds = 20,
-    },
+    source = 'nvim-lua/plenary.nvim',
+    later = true,
+    cb = function() end,
   },
   {
     source = 'SmiteshP/nvim-navic',
@@ -270,7 +265,7 @@ mininvim.deps.setup({
     source = 'HakonHarnes/img-clip.nvim',
     name = 'img-clip',
     later = true,
-    disabled = true,
+    disable = true,
     opts = {
       default = {
         embed_image_as_base64 = false,

@@ -1,6 +1,4 @@
 local MiniStatusline = require('mini.statusline')
-local battery = require('battery')
-
 -- local navic = require('nvim-navic')
 
 local function get_time()
@@ -101,7 +99,7 @@ local function active_mode()
   local fileinfo = MiniStatusline.section_fileinfo({ trunc_width = 150 })
   local location = get_location('percent')
   local search = MiniStatusline.section_searchcount({ trunc_width = 75 })
-  local nvim_battery = battery.get_status_line()
+  -- local nvim_battery = battery.get_status_line()
   local time = get_time()
   local recorder = recorder_section()
   local filename = MiniStatusline.section_filename({ trunc_width = 250 })
@@ -124,7 +122,7 @@ local function active_mode()
     },
     '%=', -- End left alignment
     { hl = 'MiniStatuslineFileinfo', strings = { recorder, lsp, fileinfo } },
-    { hl = '', strings = { nvim_battery, location } },
+    { hl = '', strings = { location } },
     { hl = mode_hl, strings = { search, time } },
   })
 end
